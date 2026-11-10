@@ -129,8 +129,8 @@ export default function WalletLogin() {
               <small>Institutional Marketplace</small>
             </span>
           </div>
-          <div className="wallet-login-bar__actions">
-            <ConnectWalletButton userId="sousa" />
+          <div className="">
+            <ConnectWalletButton className="restatefi-btn restatefi-btn--primary wallet-login-cta" userId="sousa" />
           </div>
         </div>
       </header>
