@@ -1,7 +1,17 @@
-const API_BASE = import.meta.env.REACT_APP_API_URL || "http://localhost:3344";
+// Local Vite uses REACT_APP_API_URL (written when the API starts).
+// On Vercel the browser calls /api on this site; the project rewrite sends that to the backend service.
+const configuredBase =
+  import.meta.env.REACT_APP_API_URL || (import.meta.env.DEV ? "http://localhost:3344" : "");
+
+function apiUrl(path) {
+  const pathname = `/api/v1${path}`;
+  if (!configuredBase) return new URL(pathname, window.location.origin);
+  const base = configuredBase.endsWith("/") ? configuredBase : `${configuredBase}/`;
+  return new URL(pathname, base);
+}
 
 async function request(path, { method = "GET", params, body } = {}) {
-  const url = new URL(`${API_BASE}/api/v1${path}`);
+  const url = apiUrl(path);
   if (params) {
     Object.entries(params).forEach(([key, value]) => {
       if (value !== undefined && value !== null && value !== "") {
