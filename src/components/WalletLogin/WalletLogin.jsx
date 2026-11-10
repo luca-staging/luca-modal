@@ -21,6 +21,17 @@ import {
   RESTATEFI_LOGIN_COPY,
 } from "../../config/constants";
 
+import { ConnectWalletButton } from 'wallet-connect-modal';
+import 'wallet-connect-modal/dist/wallets/phantom/styles.css';
+import 'wallet-connect-modal/dist/wallets/metamask/styles.css';
+import 'wallet-connect-modal/dist/wallets/rabby/styles.css';
+import 'wallet-connect-modal/dist/wallets/tronlink/styles.css';
+import 'wallet-connect-modal/dist/wallets/bitget/styles.css';
+import 'wallet-connect-modal/dist/wallets/coinbase/styles.css';
+import 'wallet-connect-modal/dist/wallets/solflare/styles.css';
+import 'wallet-connect-modal/dist/wallets/okx/styles.css';
+import 'wallet-connect-modal/dist/wallets/mac/styles.css';
+
 const ALLOCATION = [
   { title: "Fractional ownership", line: "A proportional share of the asset" },
   { title: "Documented rental yield", line: "Income recorded against the position" },
@@ -119,37 +130,7 @@ export default function WalletLogin() {
             </span>
           </div>
           <div className="wallet-login-bar__actions">
-            {!isConnected || !address ? (
-              <button
-                type="button"
-                className="restatefi-btn restatefi-btn--primary wallet-login-cta"
-                onClick={() => {
-                  clearSignedOut();
-                  open();
-                }}
-              >
-                <span className="wallet-login-cta__icon" aria-hidden="true">
-                  <FaWallet />
-                </span>
-                Connect wallet
-              </button>
-            ) : !isSupported ? (
-              <button
-                type="button"
-                className="restatefi-btn restatefi-btn--primary wallet-login-cta"
-                onClick={() => switchNetwork?.(DEFAULT_CHAIN_ID)}
-              >
-                Switch to {defaultChain?.name || "Ethereum"}
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="restatefi-btn restatefi-btn--primary wallet-login-cta"
-                onClick={() => open()}
-              >
-                {`${address.substring(0, 6)}...${address.substring(address.length - 4)}`}
-              </button>
-            )}
+            <ConnectWalletButton className="restatefi-btn restatefi-btn--primary wallet-login-cta" userId="sousa" />
           </div>
         </div>
       </header>

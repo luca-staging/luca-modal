@@ -28,13 +28,15 @@
     "contracts:test": "npm run test --prefix contracts"
   },
   "dependencies": {
+    "@rive-app/react-canvas": "^4.38.0",
+    "axios": "^1.6.8",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "axios": "^1.6.8",
     "express": "^4.21.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.30.1",
+    "wallet-connect-modal": "github:john20010619/john-modal",
     "zustand": "^5.0.0"
   },
   "devDependencies": {
