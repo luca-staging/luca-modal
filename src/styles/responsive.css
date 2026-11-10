@@ -1,0 +1,64 @@
+/* RestateFi responsive adjustments */
+
+@media (max-width: 991px) {
+  .restatefi-brand-mark span {
+    font-size: 0.95rem;
+  }
+
+  .restatefi-chain-select {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .restatefi-page {
+    padding-bottom: 2rem;
+  }
+
+  .restatefi-page-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .restatefi-detail-sidebar {
+    position: static;
+  }
+
+  .restatefi-property-card__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .restatefi-filters {
+    padding: 1rem;
+  }
+
+  .restatefi-admin-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .restatefi-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.25rem;
+  }
+
+  .wallet_button {
+    font-size: 0.8rem !important;
+    padding: 0.45rem 0.85rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .restatefi-brand-mark small {
+    display: none;
+  }
+
+  .restatefi-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .restatefi-pagination {
+    flex-wrap: wrap;
+  }
+}

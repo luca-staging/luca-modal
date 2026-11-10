@@ -1,0 +1,15 @@
+node_modules
+build
+build-dev
+dist
+.env
+.env.local
+.env.development.local
+backend/.env
+public/static
+backend/data/store.json
+backend/prisma/dev.db
+.deps-cache
+bun.lock
+bun.lockb
+bunfig.toml

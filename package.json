@@ -1,0 +1,45 @@
+{
+  "name": "restatefi",
+  "version": "1.0.4",
+  "private": true,
+  "description": "RestateFi Markets. Tokenized and fractional property investing on Ethereum.",
+  "author": "RestateFi",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "setup": "npm install && npm run db:seed",
+    "dev": "concurrently -k -n web,api -c cyan,magenta \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "vite",
+    "dev:api": "node --watch-path=backend/src --watch backend/src/server.js",
+    "build": "vite build",
+    "start": "node backend/src/server.js",
+    "start:api": "node backend/src/server.js",
+    "start:web": "vite preview --port 3000 --strictPort",
+    "preview": "npm run build && concurrently -k -n web,api -c cyan,magenta \"npm:start:web\" \"npm:start:api\"",
+    "test:smoke": "node backend/tests/smoke.test.js",
+    "db:seed": "node backend/src/db/seed.js",
+    "postinstall": "npm run db:seed --if-present",
+    "contracts:install": "npm install --prefix contracts",
+    "contracts:compile": "npm run compile --prefix contracts",
+    "contracts:test": "npm run test --prefix contracts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "axios": "^1.6.8",
+    "express": "^4.21.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.2.1",
+    "vite": "^6.0.7"
+  }
+}

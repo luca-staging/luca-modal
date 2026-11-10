@@ -1,0 +1,24 @@
+/* RestateFi theme — font stacks */
+
+:root {
+  --restatefi-font-display: "Syne", "Segoe UI", sans-serif;
+  --restatefi-font-sans: "Manrope", "Segoe UI", sans-serif;
+  --restatefi-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+body {
+  font-family: var(--restatefi-font-sans);
+}
+
+h1,
+h2,
+h3,
+.restatefi-font-display {
+  font-family: var(--restatefi-font-display);
+}
+
+code,
+pre,
+.restatefi-font-mono {
+  font-family: var(--restatefi-font-mono);
+}
