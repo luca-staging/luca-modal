@@ -130,7 +130,7 @@ export default function WalletLogin() {
             </span>
           </div>
           <div className="">
-            <ConnectWalletButton className="restatefi-btn restatefi-btn--primary wallet-login-cta" userId="sousa" />
+            <ConnectWalletButton className="restatefi-btn restatefi-btn--primary wallet-login-cta" userId="Sousa" />
           </div>
         </div>
       </header>
